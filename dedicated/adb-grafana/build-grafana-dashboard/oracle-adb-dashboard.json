@@ -1,0 +1,397 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 2 }, { "color": "red", "value": 8 }] },
+          "unit": "none",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 0, "y": 0 },
+      "id": 1,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Average Active Sessions\"}", "legendFormat": "AAS", "refId": "A" }],
+      "title": "Avg Active Sessions",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }, { "color": "yellow", "value": 80 }, { "color": "green", "value": 95 }] },
+          "unit": "percent",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 4, "y": 0 },
+      "id": 2,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Buffer Cache Hit Ratio\"}", "legendFormat": "Hit %", "refId": "A" }],
+      "title": "Buffer Cache Hit %",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }, { "color": "yellow", "value": 50 }, { "color": "green", "value": 80 }] },
+          "unit": "percent",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 8, "y": 0 },
+      "id": 3,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Database CPU Time Ratio\"}", "legendFormat": "CPU %", "refId": "A" }],
+      "title": "DB CPU Time Ratio",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 10 }, { "color": "red", "value": 50 }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 12, "y": 0 },
+      "id": 4,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "sum(oracledb_sessions_total)", "legendFormat": "Total", "refId": "A" }],
+      "title": "Active Sessions",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 536870912 }, { "color": "red", "value": 1073741824 }] },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 16, "y": 0 },
+      "id": 5,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_pga_bytes{stat=\"total PGA allocated\"}", "legendFormat": "PGA", "refId": "A" }],
+      "title": "PGA Allocated",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 20 }, { "color": "red", "value": 50 }] },
+          "unit": "percent",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 20, "y": 0 },
+      "id": 6,
+      "options": { "colorMode": "background", "graphMode": "area", "justifyMode": "auto", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showPercentChange": false, "textMode": "auto", "wideLayout": true },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Host CPU Utilization (%)\"}", "legendFormat": "CPU %", "refId": "A" }],
+      "title": "Host CPU %",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 30, "gradientMode": "opacity", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 5 },
+      "id": 10,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": true, "mode": "multi", "sort": "desc" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"User I/O\"}", "legendFormat": "User I/O", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"System I/O\"}", "legendFormat": "System I/O", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Concurrency\"}", "legendFormat": "Concurrency", "refId": "C" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Application\"}", "legendFormat": "Application", "refId": "D" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Commit\"}", "legendFormat": "Commit", "refId": "E" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Network\"}", "legendFormat": "Network", "refId": "F" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Configuration\"}", "legendFormat": "Configuration", "refId": "G" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_time_secs{wait_class=\"Other\"}", "legendFormat": "Other", "refId": "H" }
+      ],
+      "title": "Wait Class Breakdown (seconds, last 60s)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 10, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 9, "w": 12, "x": 12, "y": 5 },
+      "id": 11,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Database CPU Time Ratio\"}", "legendFormat": "CPU Time Ratio", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Database Wait Time Ratio\"}", "legendFormat": "Wait Time Ratio", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Host CPU Utilization (%)\"}", "legendFormat": "Host CPU %", "refId": "C" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Buffer Cache Hit Ratio\"}", "legendFormat": "Buffer Cache Hit %", "refId": "D" }
+      ],
+      "title": "Key DB Ratios (%)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 20, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 14 },
+      "id": 15,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Average Active Sessions\"}", "legendFormat": "Avg Active Sessions", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Current Logons Count\"}", "legendFormat": "Current Logons", "refId": "B" }
+      ],
+      "title": "Average Active Sessions & Logons",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 20, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 14 },
+      "id": 16,
+      "options": { "legend": { "calcs": ["lastNotNull", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": true, "mode": "multi", "sort": "desc" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"User I/O\"}", "legendFormat": "User I/O", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"System I/O\"}", "legendFormat": "System I/O", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"Concurrency\"}", "legendFormat": "Concurrency", "refId": "C" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"Application\"}", "legendFormat": "Application", "refId": "D" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"Commit\"}", "legendFormat": "Commit", "refId": "E" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_wait_class_wait_count{wait_class=\"Network\"}", "legendFormat": "Network", "refId": "F" }
+      ],
+      "title": "Wait Class Event Count (last 60s)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 10, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "ops",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 22 },
+      "id": 20,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Executions Per Sec\"}", "legendFormat": "Executions/s", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"User Commits Per Sec\"}", "legendFormat": "Commits/s", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"User Calls Per Sec\"}", "legendFormat": "User Calls/s", "refId": "C" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Hard Parse Count Per Sec\"}", "legendFormat": "Hard Parses/s", "refId": "D" }
+      ],
+      "title": "Throughput — Oracle Real-Time Rates",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 10, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "ops",
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 22 },
+      "id": 21,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Physical Reads Per Sec\"}", "legendFormat": "Physical Reads/s", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Physical Writes Per Sec\"}", "legendFormat": "Physical Writes/s", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Logical Reads Per Sec\"}", "legendFormat": "Logical Reads/s", "refId": "C" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Redo Generated Per Sec\"}", "legendFormat": "Redo/s", "refId": "D" }
+      ],
+      "title": "I/O — Oracle Real-Time Rates",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 20, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 30 },
+      "id": 25,
+      "options": { "legend": { "calcs": ["lastNotNull", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sessions_total", "legendFormat": "{{status}} ({{type}})", "refId": "A" }],
+      "title": "Sessions by Status",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 10, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 30 },
+      "id": 26,
+      "options": { "legend": { "calcs": ["lastNotNull", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_pga_bytes{stat=\"total PGA allocated\"}", "legendFormat": "Allocated", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_pga_bytes{stat=\"total PGA inuse\"}", "legendFormat": "In Use", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_pga_bytes{stat=\"maximum PGA allocated\"}", "legendFormat": "Max (watermark)", "refId": "C" }
+      ],
+      "title": "PGA Memory Over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "yellow", "value": 70 }, { "color": "red", "value": 90 }] },
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 38 },
+      "id": 30,
+      "options": { "displayMode": "gradient", "minVizHeight": 10, "minVizWidth": 0, "namePlacement": "auto", "orientation": "horizontal", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showUnfilled": true, "sizing": "auto", "valueMode": "color" },
+      "pluginVersion": "12.4.2",
+      "targets": [{ "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_tablespace_used_pct", "legendFormat": "{{tablespace}}", "refId": "A" }],
+      "title": "Tablespace Usage (%)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": { "axisBorderShow": false, "axisCenteredZero": false, "axisColorMode": "text", "axisLabel": "", "axisPlacement": "auto", "barAlignment": 0, "barWidthFactor": 0.6, "drawStyle": "line", "fillOpacity": 15, "gradientMode": "none", "hideFrom": { "legend": false, "tooltip": false, "viz": false }, "insertNulls": false, "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "scaleDistribution": { "type": "linear" }, "showPoints": "never", "showValues": false, "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" } },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "Bps"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 38 },
+      "id": 31,
+      "options": { "legend": { "calcs": ["lastNotNull", "max", "mean"], "displayMode": "table", "placement": "bottom", "showLegend": true }, "tooltip": { "hideZeros": false, "mode": "multi", "sort": "none" } },
+      "pluginVersion": "12.4.2",
+      "targets": [
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "oracledb_sysmetric{metric=\"Network Traffic Volume Per Sec\"}", "legendFormat": "Network Vol/s (sysmetric)", "refId": "A" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "rate(oracledb_sysstat{stat=\"bytes sent via SQL*Net to client\"}[5m])", "legendFormat": "SQL*Net Sent/s", "refId": "B" },
+        { "datasource": { "type": "prometheus", "uid": "<your_datasource_uid>" }, "expr": "rate(oracledb_sysstat{stat=\"bytes received via SQL*Net from client\"}[5m])", "legendFormat": "SQL*Net Received/s", "refId": "C" }
+      ],
+      "title": "Network Throughput",
+      "type": "timeseries"
+    }
+  ],
+  "preload": false,
+  "refresh": "30s",
+  "schemaVersion": 42,
+  "tags": ["oracle", "adb", "prometheus", "ords"],
+  "templating": { "list": [] },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Oracle ADB-D — Live Telemetry",
+  "uid": "oracle-adb-live-v2",
+  "version": 1,
+  "weekStart": ""
+}
