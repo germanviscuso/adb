@@ -428,7 +428,7 @@ In this lab, you will import a pre-built 16-panel Grafana dashboard that visuali
     }
     ```
 
-    > **Important:** Don't forget to replace all isntances of `<your_datasource_uid>`with your actual Prometheus data source id
+    > **Important:** Don't forget to replace all instances of `<your_datasource_uid>` with your actual Prometheus datasource id
 
 ## Task 3: Import the Dashboard
 
@@ -504,7 +504,7 @@ The dashboard is organized into 6 rows with 16 panels.
 
     ![Grafana dashboard interval](images/dashboard_interval.png)
 
-    > **Tip:** The Grafana refresh interval can be independent of the Prometheus scrape interval. Making Grafana refresh faster than 30 seconds won't show new data — Prometheus only scrapes every 30 seconds.
+    > **Tip:** The Grafana refresh interval can be independent of the Prometheus scrape interval. Making Grafana refresh faster than 30 seconds won't show new data — we configured Prometheus to only scrape every 30 seconds.
 
 3. To change the Prometheus scrape interval, edit `/etc/prometheus/prometheus.yml` on the compute instance and restart Prometheus:
 
@@ -526,7 +526,7 @@ You can create additional panels using any of the exposed metrics. Here are some
 | `oracledb_sysstat{stat="physical reads"} / oracledb_sysstat{stat="session logical reads"} * 100` | Buffer cache miss ratio from raw counters |
 | `oracledb_wait_class_time_secs{wait_class="User I/O"} / ignoring(wait_class) sum(oracledb_wait_class_time_secs) * 100` | User I/O as percentage of total wait time |
 
-You may now **proceed to the next lab**.
+You may now **proceed to the next and final lab**.
 
 ## Acknowledgements
 

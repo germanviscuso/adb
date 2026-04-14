@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will launch a compute instance in the same VCN as your ADB-D, install Prometheus and Grafana, and configure Prometheus to scrape your ORDS metrics endpoint using OAuth2 authentication.
+In this lab, you will launch a compute instance in the same VCN as your Autonomous AI Database - Dedicated (ADB-D), install Prometheus and Grafana, and configure Prometheus to scrape your ORDS metrics endpoint using OAuth2 authentication.
 
 *Estimated Lab Time:* 30 minutes
 
@@ -66,7 +66,7 @@ In this lab, you will launch a compute instance in the same VCN as your ADB-D, i
 
 ## Task 2: SSH Into the Instance
 
-1. Create a bastion port-forwarding session (you need to create a Bastion as prerequisite and get its ocid):
+1. Create a bastion port-forwarding session (you need to create a Bastion in OCI as prerequisite and get its ocid):
 
     ```bash
     oci bastion session create-port-forwarding \
@@ -251,6 +251,8 @@ In this lab, you will launch a compute instance in the same VCN as your ADB-D, i
     ```
 
     > **Replace** `<session_ocid>`, `<compute_private_ip>` and `~/.ssh/id_ed25519.pub` above.
+
+    > **Important:** This command will provide no output, it will block the terminal but keep a tunnel open (this is normal behavior)
 
 3. Open **http://localhost:3000** in your browser. Login with `admin` / `admin`. You will be prompted to change the password.
 

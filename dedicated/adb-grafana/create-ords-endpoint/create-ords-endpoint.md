@@ -82,7 +82,7 @@ https://<scan-hostname>/ords/<DB_NAME>/prom_exporter/prom/v1/metrics
 
 To find your specific values:
 
-1. In the OCI Console, navigate to your Autonomous Database and look at the **DB Connection** details. The SCAN hostname appears in the connection strings (e.g., `host-xxxxx-scan.fleetsubnet.adbvcn.oraclevcn.com`).
+1. In the OCI Console, navigate to your Autonomous AI Database and look at the **DB Connection** details. The SCAN hostname appears in the connection strings (e.g., `host-xxxxx-scan.fleetsubnet.adbvcn.oraclevcn.com`).
 
 2. The DB\_NAME is the segment after `/ords/` in your Database Actions URL. You can also retrieve it with:
 

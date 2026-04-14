@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Autonomous Database Dedicated (ADB-D) provides powerful performance views (`V$SYSSTAT`, `V$SYSMETRIC`, `V$WAITCLASSMETRIC`, and more) but does not natively expose a Prometheus-compatible metrics endpoint. In this workshop, you will build one — entirely from within the database — using Oracle REST Data Services (ORDS), PL/SQL, and the Prometheus exposition format.
+Oracle Autonomous AI Database - Dedicated (ADB-D) provides powerful performance views (`V$SYSSTAT`, `V$SYSMETRIC`, `V$WAITCLASSMETRIC`, and more) but does not natively expose a Prometheus-compatible metrics endpoint. In this workshop, you will build one — entirely from within the database — using Oracle REST Data Services (ORDS), PL/SQL, and the Prometheus exposition format.
 
 By the end of this workshop, you will have a fully functional observability pipeline: real-time database telemetry scraped by Prometheus and visualized in a Grafana dashboard — with no external agents or exporters required.
 
@@ -28,7 +28,7 @@ In this workshop, you will learn how to:
 
 This lab assumes you have:
 
-- An Oracle Autonomous Database Dedicated (ADB-D) instance running in a private subnet
+- An Oracle Autonomous AI Database - Dedicated (ADB-D) instance running in a private subnet
 - ADMIN access to the ADB-D (via Database Actions or SQLcl)
 - An OCI Bastion Service configured in the same VCN
 - OCI CLI installed and configured on your local machine

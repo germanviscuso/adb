@@ -105,7 +105,7 @@ You can create more alert rules using the same pattern. Here are some useful Pro
 | Tablespace Nearly Full | `max(oracledb_tablespace_used_pct)` | Above 85% |
 | High Wait Time Ratio | `oracledb_sysmetric{metric="Database Wait Time Ratio"}` | Above 50% |
 
-**Congratulations!** You have successfully built a complete Prometheus-compatible observability pipeline for Oracle Autonomous Database Dedicated — with live dashboards and proactive alerting — entirely from within the database using ORDS, PL/SQL, and standard Oracle performance views. No external agents or exporters required.
+**Congratulations!** You have successfully built a complete Prometheus-compatible observability pipeline for Oracle Autonomous AI Database - Dedicated (ADB-D) — with live dashboards and proactive alerting — entirely from within the database using ORDS, PL/SQL, and standard Oracle performance views. No external agents or exporters required.
 
 ## Summary
 
